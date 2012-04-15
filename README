@@ -1,1 +1,6 @@
 Ruby script, used for generating visibilty configuration file
+
+tested with ruby 1.9.3
+requires two ruby gems:
+	trollop
+	active_support
