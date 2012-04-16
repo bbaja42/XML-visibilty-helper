@@ -62,17 +62,17 @@ HERE
 def create_segment(start_time, end_time)
   xml_start = <<HERE
   <Segment>
-            <Start><!-- Time format : yyyy-MM-ddTHH:mm:ss:SSS -->
+            <Start><!-- Time format : yyyy-MM-ddTHH:mm:ss.SSS -->
 HERE
   xml_mid = <<HERE
             </Start>
-            <Stop><!-- Time format : yyyy-MM-ddTHH:mm:ss:SSS -->
+            <Stop><!-- Time format : yyyy-MM-ddTHH:mm:ss.SSS -->
 HERE
   xml_end = <<HERE
             </Stop>
   </Segment>
 HERE
-  time_format="%Y-%m-%dT%H:%M:%S:%L"
+  time_format="%Y-%m-%dT%H:%M:%S.%L"
   utc_start="               <UTC>" + start_time.strftime(time_format) + "</UTC>\n"
   utc_end="               <UTC>" + end_time.strftime(time_format) + "</UTC>\n"
   document = xml_start + utc_start + xml_mid + utc_end + xml_end
