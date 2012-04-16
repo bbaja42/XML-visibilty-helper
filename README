@@ -4,3 +4,4 @@ tested with ruby 1.9.3
 requires two ruby gems:
 	trollop
 	active_support
+	i18n
