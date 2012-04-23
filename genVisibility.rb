@@ -18,7 +18,7 @@ Trollop::die :duration, "must be positive" unless opts[:duration] > 0
 Trollop::die :period, "must be at least twice the duration size" if opts[:period] < 2 * opts[:duration]
 Trollop::die :end, "must be after start time" unless opts[:end] > opts[:start]
 
-p opts
+puts "Input parameters are : #{opts}" 
 start_time = DateTime.parse(opts[:start]).to_time
 end_time = DateTime.parse(opts[:end]).to_time
 
@@ -87,3 +87,4 @@ end
 
 xml_content = start_block + segments + end_block
 File.open(opts[:file_name], 'w') {|f| f.write(xml_content) }
+puts "Generated output file #{opts[:file_name]} "
